@@ -11,8 +11,33 @@ function draw(c, arr){
   draw.cn = function(x,y){
     clearCanvas(c, document.getElementsByTagName("canvas")[0] );
     for(var n in arr){
-      c.drawImage(arr[n].im, arr[n].x + x , arr[n].y + y );
+      var posx = arr[n].x + x;
+      var posy = arr[n].y + y;
+      if(arr[n].ac && typeof draw.action[arr[n].ac] === typeof function(){}){
+        draw.action[arr[n].ac](c , arr[n].im, posx, posy);
+      }else{
+        c.drawImage(arr[n].im, posx , posy);
+      }
     }
+  }
+  draw.action = {
+    'shake': function(c ,im ,posx, posy){
+      c.drawImage(im, posx + Math.floor(Math.random()* 20) , posy + Math.floor(Math.random()* 20));
+    },
+    'changep': function(c ,im ,posx, posy){
+      (function(){
+        if((new Date()).getTime() - draw.action.lastcall > 1000 ){
+          draw.action.lastcall = (new Date()).getTime();
+          im.src = mpath(['ars-02', 'ars3-01', 'ars2-02-sprite-2', 'ars2-02-sprite'][Math.floor(Math.random()*4)]);
+          im.onload = function(){
+            c.drawImage(im, posx + Math.floor(Math.random()* 20) , posy + Math.floor(Math.random()* 20));
+          }
+        }else{
+          c.drawImage(im, posx + Math.floor(Math.random()* 20) , posy + Math.floor(Math.random()* 20));
+        }
+      })();
+    },
+    lastcall: (new Date()).getTime()
   }
 }
 
