@@ -2,18 +2,19 @@
   window.res = function(){
     el.width = window.innerWidth;
     el.height = window.innerHeight;
+    retina(el);
     draw(el.getContext("2d"), [{
       x: el.width/2 - 150 , y: el.height/2 - 250 , src: 'ars-02', ac: 'changep'
     },{
-      x: el.width/2 - 250, y: el.height/2 - 250 , src: 'ars-01', ac: 'shake'
+      x: el.width/2 - 250, y: el.height/2 - 250 , src: 'ars-01', ac: 'scalable'
     },{
-      src: 'ars-06', x: el.width/2 + 110, y: el.height/2 - 320, ac: 'shake'
+      src: 'ars-06', x: el.width/2 + 110, y: el.height/2 - 320
     },{
-      src: 'ars-08', x: el.width/2 + 160, y: el.height/2 + 220, ac: 'shake'
+      src: 'ars-08', x: el.width/2 + 160, y: el.height/2 + 220
     },{
-      src: 'ars-05', x: el.width/2 - 130, y: el.height/2 + 250, ac: 'shake'
+      src: 'ars-05', x: el.width/2 - 130, y: el.height/2 + 250
     },{
-      src: 'ars-07', x: el.width/2 + 120, y: el.height/2 - 200, ac: 'shake'
+      src: 'ars-07', x: el.width/2 + 120, y: el.height/2 - 200
     }
     ]);
   }
@@ -40,3 +41,29 @@
     offsety: 0
   };
 })();
+
+
+function retina(cvs){
+  var context = cvs.getContext("2d"),
+      devicePixelRatio = window.devicePixelRatio || 1,
+      backingStoreRatio = context.webkitBackingStorePixelRatio ||
+                          context.mozBackingStorePixelRatio ||
+                          context.msBackingStorePixelRatio ||
+                          context.oBackingStorePixelRatio ||
+                          context.backingStorePixelRatio || 1,
+
+      ratio = devicePixelRatio / backingStoreRatio;
+  if (true) {
+
+      var oldWidth = cvs.width;
+      var oldHeight = cvs.height;
+
+      canvas.width = oldWidth * ratio;
+      canvas.height = oldHeight * ratio;
+
+      cvs.style.width = oldWidth + 'px';
+      cvs.style.height = oldHeight + 'px';
+      cvs.getContext("2d").scale(ratio, ratio);
+
+  }
+}

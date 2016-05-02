@@ -14,7 +14,7 @@ function draw(c, arr){
       var posx = arr[n].x + x;
       var posy = arr[n].y + y;
       if(arr[n].ac && typeof draw.action[arr[n].ac] === typeof function(){}){
-        draw.action[arr[n].ac](c , arr[n].im, posx, posy);
+        draw.action[arr[n].ac](c , arr[n].im, posx, posy, arr[n] );
       }else{
         c.drawImage(arr[n].im, posx , posy);
       }
@@ -24,16 +24,20 @@ function draw(c, arr){
     'shake': function(c ,im ,posx, posy){
       c.drawImage(im, posx + Math.floor(Math.random()* 20) , posy + Math.floor(Math.random()* 20));
     },
+    'scalable': function(c, im, posx, posy, obj){
+      var sl = 50000/distanceScale( obj.x , obj.y );
+      c.drawImage(im, posx - sl/2, posy - sl/2 , sl , sl);
+    },
     'changep': function(c ,im ,posx, posy){
       (function(){
         if((new Date()).getTime() - draw.action.lastcall > 1000 ){
           draw.action.lastcall = (new Date()).getTime();
           im.src = mpath(['ars-02', 'ars3-01', 'ars2-02-sprite-2', 'ars2-02-sprite'][Math.floor(Math.random()*4)]);
           im.onload = function(){
-            c.drawImage(im, posx + Math.floor(Math.random()* 20) , posy + Math.floor(Math.random()* 20));
+            c.drawImage(im, posx , posy );
           }
         }else{
-          c.drawImage(im, posx + Math.floor(Math.random()* 20) , posy + Math.floor(Math.random()* 20));
+          c.drawImage(im, posx , posy );
         }
       })();
     },
@@ -43,6 +47,10 @@ function draw(c, arr){
 
 function mpath(p){
   return 'images/'+p+'.png';
+}
+
+function distanceScale(x,y){ /////// Понимаем дистанцию до объекта
+  return (Math.abs(x - sysv.endx) + Math.abs(y - sysv.endy));
 }
 
 function clearCanvas(context, canvas) {
@@ -173,6 +181,6 @@ function ongoingTouchIndexById(idToFind) {
 }
 function log(msg) {
   var p = document.getElementsByTagName('p')[0];
-  p.innerHTML = 'hi';//window.sysv.offx + ':';
+  p.innerHTML = '✕';//window.sysv.offx + ':';
   //console.log(sysv);
 }
