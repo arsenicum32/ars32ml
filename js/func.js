@@ -25,7 +25,12 @@ function draw(c, arr){
       c.drawImage(im, posx + Math.floor(Math.random()* 20) , posy + Math.floor(Math.random()* 20));
     },
     'scalable': function(c, im, posx, posy, obj){
-      var sl = 50000/distanceScale( obj.x , obj.y );
+      function distanceScale(x,y){ /////// Понимаем дистанцию до объекта
+        return window.innerWidth>window.innerHeight ?
+        window.innerWidth:window.innerHeight
+        /(Math.abs(x - sysv.endx) + Math.abs(y - sysv.endy));
+      }
+      var sl = 20*distanceScale( obj.x  , obj.y  );
       c.drawImage(im, posx - sl/2, posy - sl/2 , sl , sl);
     },
     'changep': function(c ,im ,posx, posy){
@@ -47,10 +52,6 @@ function draw(c, arr){
 
 function mpath(p){
   return 'images/'+p+'.png';
-}
-
-function distanceScale(x,y){ /////// Понимаем дистанцию до объекта
-  return (Math.abs(x - sysv.endx) + Math.abs(y - sysv.endy));
 }
 
 function clearCanvas(context, canvas) {
@@ -107,6 +108,13 @@ function handleMove(evt) {
     sysv.endx =  sysv.offsetx + (touches[0].pageX - sysv.sx) ;
     sysv.endy =  sysv.offsety + (touches[0].pageY - sysv.sy) ;
       draw.cn( sysv.endx , sysv.endy );
+    ////////
+    $('.item').each(function() {
+            $(this).css('left', (parseInt($(this).attr('cx') || 0)) + sysv.endx  + 'px');
+            $(this).css('top', (parseInt($(this).attr('cy') || 0)) + sysv.endy + 'px');
+    })
+
+
     ////////
 
       ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // swap in the new touch record

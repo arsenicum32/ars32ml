@@ -3,18 +3,19 @@
     el.width = window.innerWidth;
     el.height = window.innerHeight;
     retina(el);
+    var ind = 2;
     draw(el.getContext("2d"), [{
-      x: el.width/2 - 150 , y: el.height/2 - 250 , src: 'ars-02', ac: 'changep'
+      x: el.width/2 - 150*ind , y: el.height/2 - 250*ind , src: 'ars-02', ac: 'changep'
     },{
-      x: el.width/2 - 250, y: el.height/2 - 250 , src: 'ars-01', ac: 'scalable'
+      x: el.width/2 - 250*ind, y: el.height/2 - 250*ind , src: 'ars-01', ac: 'scalable'
     },{
-      src: 'ars-06', x: el.width/2 + 110, y: el.height/2 - 320
+      src: 'ars-06', x: el.width/2 + 110*ind, y: el.height/2 - 320*ind
     },{
-      src: 'ars-08', x: el.width/2 + 160, y: el.height/2 + 220
+      src: 'ars-08', x: el.width/2 + 160*ind, y: el.height/2 + 220*ind
     },{
-      src: 'ars-05', x: el.width/2 - 130, y: el.height/2 + 250
+      src: 'ars-05', x: el.width/2 - 130*ind, y: el.height/2 + 250*ind
     },{
-      src: 'ars-07', x: el.width/2 + 120, y: el.height/2 - 200
+      src: 'ars-07', x: el.width/2 + 120*ind, y: el.height/2 - 200*ind
     }
     ]);
   }
