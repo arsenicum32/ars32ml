@@ -7,7 +7,7 @@
     draw(el.getContext("2d"), [{
       x: el.width/2 - 150*ind , y: el.height/2 - 250*ind , src: 'ars-02', ac: 'changep'
     },{
-      x: el.width/2 - 250*ind, y: el.height/2 - 250*ind , src: 'ars-01', ac: 'scalable'
+      x: el.width/2 - 250*ind, y: el.height/2 - 250*ind , src: 'ars-01'
     },{
       src: 'ars-06', x: el.width/2 + 110*ind, y: el.height/2 - 320*ind
     },{
