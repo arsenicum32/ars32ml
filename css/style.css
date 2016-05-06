@@ -6,4 +6,5 @@ body {
 }
 .item{
   position: absolute;
+  width: 400px;
 }
