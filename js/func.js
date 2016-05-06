@@ -188,7 +188,7 @@ function ongoingTouchIndexById(idToFind) {
 
 }
 function log(msg) {
-  var p = document.getElementsByTagName('p')[0];
-  p.innerHTML = '✕';//window.sysv.offx + ':';
+  //var p = document.getElementsByTagName('p')[0];
+  //p.innerHTML = '✕';//window.sysv.offx + ':';
   //console.log(sysv);
 }
