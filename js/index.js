@@ -20,11 +20,12 @@
     ]);
   }
   var el = document.getElementsByTagName("canvas")[0];
+  var bd = document.getElementsByTagName("body")[0];
   res();
-  el.addEventListener("touchstart", handleStart, false);
-  el.addEventListener("touchend", handleEnd, false);
-  el.addEventListener("touchcancel", handleCancel, false);
-  el.addEventListener("touchmove", handleMove, false);
+  bd.addEventListener("touchstart", handleStart, false);
+  bd.addEventListener("touchend", handleEnd, false);
+  bd.addEventListener("touchcancel", handleCancel, false);
+  bd.addEventListener("touchmove", handleMove, false);
   window.addEventListener("resize", res, false);
   log("initialized.");
   window.onload = function(){
