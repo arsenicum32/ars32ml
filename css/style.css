@@ -19,3 +19,33 @@ body {
 .Impagelinks *{
   margin: 5px;
 }
+
+#nigel {
+  display: none;
+}
+form {
+  width: 30%;
+}
+#changeform {
+  font-size: 3em;
+  border: 0;
+  cursor: pointer;
+  color: #00f;
+}
+#superfiled {
+  height: 150px;
+}
+input,
+textarea {
+  font-family: "Lucida Console", Monaco, monospace;
+  border: 2px solid #000;
+  background: #fff;
+  outline: none;
+  -webkit-transition: 900ms ease all;
+  transition: 900ms ease all;
+}
+input:focus,
+textarea:focus {
+  background: #000;
+  color: #fff;
+}
