@@ -17,7 +17,7 @@ atext.g('gitar',function(data){
 });
 
 atext.g('chess',function(data){
-  $('.chess').text(data.h2+ '<br>' + data.p);
+  $('.chess').text(data.h2);
   $('.chess').attr('href', data.link);
 });
 
