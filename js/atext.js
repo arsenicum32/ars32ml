@@ -11,6 +11,13 @@ atext.g('coffee',function(data){
   $('.coffee').text(data.p);
 });
 
+atext.g('gitar',function(data){
+  $('.gitar').text(data.p);
+  $('.gitar').attr('href',data.link);
+});
+
+
+
 
 atext.g('me',function(data){
   $('.Impage').text(data.p);
