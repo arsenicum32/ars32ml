@@ -23,8 +23,11 @@ body {
 #nigel {
   display: none;
 }
-form {
-  width: 300px;
+form p{
+  background: blue;
+  color: white;
+  padding: 5px;
+  width: 120px;
 }
 #changeform {
   font-size: 3em;
