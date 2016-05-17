@@ -1,7 +1,22 @@
 atext.g('about',function(data){
-  console.log(data);
   $('.about1').text(data.h1);
   $('.about2').text(data.p);
+});
+
+atext.g('works',function(data){
+  $('.macbook').text(data.p);
+});
+
+atext.g('coffee',function(data){
+  $('.coffee').text(data.p);
+});
+
+
+atext.g('me',function(data){
+  $('.Impage').text(data.p);
+  for(var n in data.links){
+    $('.Impagelinks').append('<a href="'+data.links[n]+'">'+n+'</a><br>');
+  }
 });
 
 // atext.dthelp.gdata( atext.dtjson[0], function(data){

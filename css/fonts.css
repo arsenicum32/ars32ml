@@ -1,0 +1,36 @@
+.fbd{
+  font-weight: bold;
+}
+.fbdr{
+  font-weight: bolder;
+}
+.flt{
+  font-weight: lighter;
+}
+.fbig{
+  font-size: 2em;
+}
+.fbigger{
+  font-size: 4em;
+}
+.fsmall{
+  font-size: 0.75em;
+}
+.fsmaller{
+  font-size: 0.5em;
+}
+.fscaps{
+  font-variant: small-caps;
+}
+.funder{
+  text-decoration: underline;
+}
+.fover{
+  text-decoration: overline;
+}
+.f-{
+  text-decoration: line-through;
+}
+.fuck{
+  font-style: oblique;
+}

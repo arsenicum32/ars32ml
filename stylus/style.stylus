@@ -1,7 +1,0 @@
-body
-  margin 0
-  overflow hidden
-  p
-    position absolute
-    top 5px
-    left 5px

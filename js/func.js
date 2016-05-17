@@ -62,7 +62,7 @@ function clearCanvas(context, canvas) {
 }
 var ongoingTouches = new Array();
 function handleStart(evt) {
-  evt.preventDefault();
+  //evt.preventDefault();
   log("touchstart.");
   var el = document.getElementsByTagName("canvas")[0];
   var ctx = el.getContext("2d");
@@ -124,7 +124,7 @@ function handleMove(evt) {
   }
 }
 function handleEnd(evt) {
-  evt.preventDefault();
+  //evt.preventDefault();
   log("touchend");
   var el = document.getElementsByTagName("canvas")[0];
   var ctx = el.getContext("2d");
