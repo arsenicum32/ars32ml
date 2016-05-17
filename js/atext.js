@@ -16,6 +16,11 @@ atext.g('gitar',function(data){
   $('.gitar').attr('href',data.link);
 });
 
+atext.g('chess',function(data){
+  $('.chess').text(data.h2+ '<br>' + data.p);
+  $('.chess').attr('href', data.link);
+});
+
 
 
 
