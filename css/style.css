@@ -16,3 +16,6 @@ body {
   display: flex;
   font-size: 0.5em;
 }
+.Impagelinks *{
+  margin: 5px;
+}
