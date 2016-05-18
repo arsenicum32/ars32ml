@@ -4,7 +4,10 @@ atext.g('about',function(data){
 });
 
 atext.g('works',function(data){
-  $('.macbook').text(data.p);
+  $('.macbook').append('<p style="display: inline-block" >'+data.p+'</p>');
+  for(var n in data.works){
+    $('.macbook').append('<a href="'+data.works[n].link+'" style="display: inline-block">'+data.works[n].name+'</a>');
+  }
 });
 
 atext.g('coffee',function(data){
