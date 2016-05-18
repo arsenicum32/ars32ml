@@ -6,7 +6,7 @@ atext.g('about',function(data){
 atext.g('works',function(data){
   $('.macbook').append('<p style="display: inline-block" >'+data.p+' : </p>');
   for(var n in data.works){
-    $('.macbook').append('<a href="'+data.works[n].link+'" style="display: inline-block">'+data.works[n].name+'</a>');
+    $('.macbook').append('<a href="'+data.works[n].link+'" style="display: inline-block"> '+data.works[n].name+' </a>');
   }
 });
 
