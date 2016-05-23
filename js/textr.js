@@ -19,7 +19,8 @@ function rtext(){
     var el = this;
     !el.hasAttribute("scopestart")?el.setAttribute('scopestart', el.innerHTML ):void(0);
     el.innerHTML = change( el.getAttribute('scopestart') );
-    setInterval(function(){
+    var inter = setInterval(function(){
+      el.innerHTML == el.getAttribute('scopestart')?clearInterval(inter):void(0);
       el.innerHTML =  mixtext( el.innerHTML , el.getAttribute('scopestart'));
     }, 100);
   })
