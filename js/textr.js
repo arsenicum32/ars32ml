@@ -1,5 +1,3 @@
-var intertext ;
-
 function rtext(){
   function change(text){
     var artext = text.split('');
@@ -21,11 +19,11 @@ function rtext(){
     var el = this;
     !el.hasAttribute("scopestart")?el.setAttribute('scopestart', el.innerHTML ):void(0);
     el.innerHTML = change( el.getAttribute('scopestart') );
-    if( !intertext ){
-      intertext = setInterval(function(){
+    if( !el.intertext ){
+      el.intertext = setInterval(function(){
         if(el.innerHTML == el.getAttribute('scopestart')){
-          clearInterval(intertext);
-          intertext = false;
+          clearInterval(el.intertext);
+          el.intertext = false;
         }
         el.innerHTML =  mixtext( el.innerHTML , el.getAttribute('scopestart'));
       }, 100);
