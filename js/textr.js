@@ -9,10 +9,11 @@ function rtext(){
     return artext.join('');
   }
   function mixtext(a,b){
-    for (var i in x){
-      Math.random()>0.5? x[i] = y[i] : void(0);
+    var fin = a.split('');
+    for (var i in fin){
+      Math.random()>0.5? fin[i] = b.split('')[i] : void(0);
     }
-    return x;
+    return fin.join('');
   }
   $('.rtext').each(function(){
     var el = this;
