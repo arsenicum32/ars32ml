@@ -42,6 +42,7 @@ input,
 textarea {
   font-family: "Lucida Console", Monaco, monospace;
   border: 2px solid #000;
+  border-radius: 0;
   background: #fff;
   outline: none;
   -webkit-transition: 900ms ease all;
