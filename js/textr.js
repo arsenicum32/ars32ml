@@ -8,20 +8,20 @@ function rtext(){
     }
     return artext.join('');
   }
+  function mixtext(a,b){
+    var x = a.length > b.length ? a:b;
+    var y = a.length > b.length ? b:a;
+    for (var i in x){
+      Math.random()>0.5? x[i] = y[i] : void(0);
+    }
+    return x;
+  }
   $('.rtext').each(function(){
     var el = this;
     !el.hasAttribute("scopestart")?el.setAttribute('scopestart', el.innerHTML ):void(0);
     el.innerHTML = change( el.getAttribute('scopestart') );
-    var inter = setInterval(function(){
-      if(el.innerHTML ==  el.getAttribute('scopestart')) clearInterval(inter);
-      else{
-        var arhtml = el.innerHTML.split('');
-        var rd = Math.floor(Math.random()*arhtml.length);
-        if( arhtml[rd] != ' '){
-          arhtml[rd] = el.getAttribute('scopestart').split('')[rd];
-          el.innerHTML = arhtml;
-        }
-      }
-    }, 20);
+    setTimeout(function(){
+      el.innerHTML =  mixtext( el.innerHTML , el.getAttribute('scopestart'));
+    }, 100);
   })
 }
