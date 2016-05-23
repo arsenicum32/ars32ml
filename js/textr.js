@@ -9,12 +9,10 @@ function rtext(){
     return artext.join('');
   }
   $('.rtext').each(function(){
-    !this.hasAttribute("scopestart")?$(this).attr('scopestart', $(this).html()):void(0);
-    var changer = change( $(this).attr('scopestart') );
-    $(this).html(changer);
-
+    !this.hasAttribute("scopestart")?this.setAttribute('scopestart', this.innerHTML ):void(0);
+    this.innerHTML = change( this.getAttribute('scopestart') );
     setTimeout(function(){
-      $(this).html( $(this).attr('scopestart') );
+      this.innerHTML =  this.getAttribute('scopestart');
     }, 100);
   })
 }
