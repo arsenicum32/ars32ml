@@ -9,10 +9,11 @@ function rtext(){
     return artext.join('');
   }
   $('.rtext').each(function(){
-    !this.hasAttribute("scopestart")?this.setAttribute('scopestart', this.innerHTML ):void(0);
-    this.innerHTML = change( this.getAttribute('scopestart') );
+    var el = this;
+    !el.hasAttribute("scopestart")?el.setAttribute('scopestart', el.innerHTML ):void(0);
+    el.innerHTML = change( el.getAttribute('scopestart') );
     setTimeout(function(){
-      this.innerHTML =  this.getAttribute('scopestart');
+      el.innerHTML =  el.getAttribute('scopestart');
     }, 100);
   })
 }
