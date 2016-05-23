@@ -10,7 +10,7 @@ function rtext(){
   }
   function mixtext(a,b){
     var fin = a.split('');
-    for (var i in fin){
+    for (var i in b.split('')){
       Math.random()>0.5? fin[i] = b.split('')[i] : void(0);
     }
     return fin.join('');
