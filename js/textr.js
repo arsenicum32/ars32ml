@@ -9,7 +9,7 @@ function rtext(){
     return artext.join('');
   }
   $('.rtext').each(function(){
-    !$(this).attr('scopestart')?$(this).attr('scopestart', $(this).html()):void(0);
+    !$(this).hasAttr('scopestart')?$(this).attr('scopestart', $(this).html()):void(0);
     var changer = change( $(this).attr('scopestart') );
     $(this).html(changer);
 
@@ -18,7 +18,3 @@ function rtext(){
     }, 100);
   })
 }
-
-setInterval(function(){
-  rtext();
-}, 1000)

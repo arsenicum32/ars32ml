@@ -109,6 +109,8 @@ function handleMove(evt) {
     sysv.endy =  sysv.offsety + (touches[0].pageY - sysv.sy) ;
       draw.cn( sysv.endx , sysv.endy );
     ////////
+      rtext(); /////////// рандомизатор текста
+    ////////
     $('.item').each(function() {
             $(this).css('left', (parseInt($(this).attr('cx') || 0)) + sysv.endx  + 'px');
             $(this).css('top', (parseInt($(this).attr('cy') || 0)) + sysv.endy + 'px');
