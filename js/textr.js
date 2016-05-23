@@ -9,8 +9,6 @@ function rtext(){
     return artext.join('');
   }
   function mixtext(a,b){
-    var x = a.length > b.length ? a:b;
-    var y = a.length > b.length ? b:a;
     for (var i in x){
       Math.random()>0.5? x[i] = y[i] : void(0);
     }
