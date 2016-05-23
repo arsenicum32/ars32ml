@@ -20,7 +20,7 @@ function rtext(){
     var el = this;
     !el.hasAttribute("scopestart")?el.setAttribute('scopestart', el.innerHTML ):void(0);
     el.innerHTML = change( el.getAttribute('scopestart') );
-    setTimeout(function(){
+    setInterval(function(){
       el.innerHTML =  mixtext( el.innerHTML , el.getAttribute('scopestart'));
     }, 100);
   })
