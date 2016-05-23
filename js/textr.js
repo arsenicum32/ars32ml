@@ -9,7 +9,7 @@ function rtext(){
     return artext.join('');
   }
   $('.rtext').each(function(){
-    !$(this).hasAttr('scopestart')?$(this).attr('scopestart', $(this).html()):void(0);
+    !this.hasAttribute("scopestart")?$(this).attr('scopestart', $(this).html()):void(0);
     var changer = change( $(this).attr('scopestart') );
     $(this).html(changer);
 
