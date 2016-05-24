@@ -1,0 +1,3 @@
+начиналось всё на на кодпене http://codepen.io/Arsenicum32/pen/yOpojY 
+
+Мобильная версия сайта...

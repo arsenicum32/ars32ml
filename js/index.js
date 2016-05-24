@@ -72,6 +72,5 @@ function retina(cvs){
       cvs.style.width = oldWidth + 'px';
       cvs.style.height = oldHeight + 'px';
       cvs.getContext("2d").scale(ratio, ratio);
-
   }
 }
