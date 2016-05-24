@@ -3,7 +3,7 @@
     el.width = window.innerWidth;
     el.height = window.innerHeight;
     retina(el);
-    var ind = 2;
+    var ind = 4;
     draw(el.getContext("2d"), [{
       x: el.width/2 - 150*ind , y: el.height/2 - 250*ind , src: 'ars-02', ac: 'changep'
     },{
