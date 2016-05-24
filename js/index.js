@@ -16,6 +16,12 @@
       src: 'ars-05', x: el.width/2 - 130*ind, y: el.height/2 + 250*ind
     },{
       src: 'ars-07', x: el.width/2 + 120*ind, y: el.height/2 - 200*ind
+    },{
+      src: 'chess', x: el.width/2 + 140*ind, y: el.height/2 - 180*ind
+    },{
+      src: 'ars3-04', x: el.width/2 - 150*ind, y: el.height/2 + 20*ind
+    },{
+      src: 'ars-11', x: el.width/2 + 100*ind, y: el.height/2 + 10*ind
     }
     ]);
   }
